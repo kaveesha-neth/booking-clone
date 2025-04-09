@@ -34,19 +34,18 @@ This is a **frontend-only clone** of the Booking.com website, developed purely u
 
 ## 📁 Project Structure
 
-booking.com clone
- ├── favicon/ # Favicon assets
- ├── assets/ # Images, icons, and media
- ├── index.html # Main landing page
- ├── flights.html # Static flight booking UI
- ├── car_rent.html # Static car rental page
- ├── attractions.html # Static attraction booking 
- ├── style.css # Main styles (shared) 
- ├── flights.css # Flight page specific styles 
- ├── car_rent.css # Car rental specific styles 
- ├── attractions.css # Attractions page specific styles 
- └── main.js # JavaScript functionality
-
+- `booking.com clone/`
+  - `favicon/`               # Favicon assets
+  - `assets/`                # Images, icons, and media
+  - `index.html`             # Main landing page
+  - `flights.html`           # Static flight booking UI
+  - `car_rent.html`          # Static car rental page
+  - `attractions.html`       # Static attraction booking
+  - `style.css`              # Main styles (shared)
+  - `flights.css`            # Flight page specific styles
+  - `car_rent.css`           # Car rental specific styles
+  - `attractions.css`        # Attractions page specific styles
+  - `main.js`                # JavaScript functionality
 
 ---
 
