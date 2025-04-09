@@ -74,6 +74,5 @@ _Coming Soon..._ (You can deploy it on [Netlify](https://www.netlify.com/) or [V
 
 ## 💖 Author
 
-Made with patience and curiosity by **Kaveesha** 🌿  
-Feel free to fork or contribute!
+Made with patience by **Kaveesha Nethmal** 🌿  
 
