@@ -1,0 +1,203 @@
+.input-items {
+  position: relative;
+}
+
+.attr-drop-down {
+  position: absolute;
+  gap: 0;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 100;
+  padding-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.518) 0 0 10px;
+  display: none;
+}
+
+.attr-drop-down-item {
+  width: auto;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all ease-in-out 0.2s;
+}
+
+.attr-drop-down-item img {
+  border-radius: 5px;
+}
+
+.attr-drop-down-item span {
+  color: rgb(125, 125, 125);
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+
+.attr-drop-down p {
+  color: rgb(79, 79, 79);
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.attr-drop-down-item:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+#attr-location,
+#attr-date {
+  width: 45%;
+}
+
+#attr-date span {
+  margin: 0 10px;
+}
+
+main {
+  padding: 30px 20px;
+}
+
+.sub-section-title-attr {
+  margin: 50px 0;
+  margin-bottom: 30px;
+}
+
+.sub-section-title-attr h3 {
+  font-weight: 500;
+}
+
+.rec-nav-card-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.rec-nav-card-wrapper .rec-nav-card {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.rec-nav-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+}
+
+.rec-nav-card .rec-nav-card-text,
+.attr_nav_card_text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 15px;
+  padding: 15px;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.722) 10%,
+    transparent 70%
+  );
+}
+
+.rec-nav-card:hover img {
+  transform: scale(105%);
+}
+
+.n_destinations-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.n_destinations_card {
+  position: relative;
+  width: auto;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.n_destinations_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  transition: all ease-in-out 0.3s;
+}
+
+.attr_nav_card_text {
+  width: 92%;
+  height: 100%;
+}
+
+.n_destinations_card:hover img {
+  transform: scale(105%);
+}
+
+.attr_nav_card_text .things2do {
+  font-weight: 500;
+  color: rgb(199, 199, 199);
+  font-size: 0.9em;
+}
+
+@media only screen and (max-width: 850px) {
+  .input-bar {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  #attr-location,
+  #attr-date {
+    width: auto;
+  }
+
+  #search-input {
+    width: 100%;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .n_destinations-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .n_destinations-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .rec-nav-card-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Code By Kaveesha Nethmal 244176N */

@@ -1,0 +1,182 @@
+.input-items .input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper .input-description {
+  padding-left: 10px;
+  font-size: 0.9em;
+  color: rgb(96, 96, 96);
+}
+
+.input-wrapper .time-input {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 1px;
+  padding-left: 10px;
+  font-size: 1em;
+  border: solid #00000000 1px;
+}
+
+#location {
+  width: 30%;
+}
+
+#pickup-date,
+#pickup-time,
+#drop-off-date,
+#drop-off-time {
+  width: max-content;
+  padding: 0 10px;
+}
+
+#search-input {
+  width: 20%;
+}
+
+.driver-details {
+  display: flex;
+  gap: 30px;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.detail-wrap {
+  display: flex;
+  gap: 10px;
+}
+
+.driver-details .detail-wrap label {
+  font-size: 18px;
+  color: white;
+}
+
+.detail-wrap input {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+
+main {
+  padding: 20px 10px;
+}
+
+.rental-companies {
+  margin-top: 30px;
+}
+
+.companies {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.company-name-wrap img {
+  border-radius: 10px;
+}
+
+.company-name-wrap p {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.sub-section {
+  margin-top: 30px;
+}
+
+.question-wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  padding: 10px;
+  background-color: rgb(255, 255, 245);
+  border: solid rgb(184, 184, 184) 1px;
+  cursor: pointer;
+}
+
+.question-wrap:first-of-type {
+  margin-top: 20px;
+  border-radius: 10px 10px 0 0;
+}
+
+.question-wrap:last-of-type {
+  border-radius: 0 0 10px 10px;
+}
+
+.question {
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.answer {
+  font-size: 0.9em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.answer.open {
+  max-height: 200px;
+  padding-bottom: 5px;
+}
+
+.arrow {
+  padding: 5px 5px;
+  padding-top: 0;
+  display: inline-block;
+  transform: rotate(-180deg);
+  transition: all ease-in 0.2s;
+}
+
+.input-bar {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .input-bar {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+  }
+
+  #location,
+  #pickup-date,
+  #pickup-time,
+  #drop-off-date,
+  #drop-off-time {
+    width: auto;
+    height: auto;
+  }
+
+  #search-input {
+    width: 100%;
+    height: 40px;
+  }
+
+  .driver-details {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .driver-details {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .question-wrap {
+    max-width: 100%;
+  }
+}
+
+/* Code By Kaveesha Nethmal 244176N */

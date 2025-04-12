@@ -1,0 +1,249 @@
+body {
+  background-color: #f0f3f5;
+}
+
+main {
+  background-color: #f0f3f5;
+}
+
+.flight-data-input {
+  width: 100%;
+  background-color: #febb02;
+  height: auto;
+  padding: 30px 0;
+}
+
+.flight-data-input .input-bar {
+  max-width: 1100px;
+  background: none;
+  gap: 5px;
+  margin-bottom: 0;
+}
+
+.input-items img {
+  transform: scale(90%);
+}
+
+#swap-input {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#swap-input img {
+  object-position: center;
+  height: 100%;
+  width: 60%;
+  object-fit: contain;
+  /* transform: scale(50%); */
+  transition: all ease-in-out 0.3s;
+}
+
+#destination-1,
+#destination-2 {
+  width: 30%;
+}
+
+.input-items {
+  position: relative;
+}
+
+.des-drop-down {
+  position: absolute;
+  gap: 0;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 100;
+  padding-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.518) 0 0 10px;
+  display: none;
+}
+
+.des-drop-down-item {
+  width: auto;
+  padding: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.des-drop-down-item span {
+  color: rgb(125, 125, 125);
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+
+.des-drop-down p {
+  color: rgb(79, 79, 79);
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.des-drop-down-item:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.main-content-wrapper-flight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.flight-details-wrapper {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.flight-detail-card {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin-top: 20px;
+}
+
+.flight-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.flight-time-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.airline-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.airline-logo img {
+  width: 50px;
+  height: auto;
+}
+
+.flight-time {
+  width: 100%;
+}
+
+.flight-timenData {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flight-time-dur {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.flights-stops,
+.duration,
+.route,
+.airways-name {
+  font-size: 14px;
+  color: #555;
+}
+
+.flight-price {
+  text-align: left;
+  width: 250px;
+  margin-left: 50px;
+}
+
+.best-badge {
+  background-color: #e6f4ff;
+  color: #007aff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.flight-class,
+.airline {
+  font-size: 14px;
+  color: #333;
+}
+
+.view-deal-btn {
+  margin-top: 8px;
+  padding: 8px 14px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.view-deal-btn:hover {
+  background-color: #005ecb;
+}
+
+.booking-info {
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+}
+
+footer {
+  margin-top: 30px;
+}
+
+#hidden-card-1,
+#hidden-card-2,
+#hidden-card-3 {
+  display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  .input-bar {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #destination-1,
+  #destination-2 {
+    width: 80%;
+  }
+
+  #search-input {
+    width: 80%;
+    height: 40px;
+  }
+
+  #date {
+    width: 80%;
+  }
+}
+
+/* Code By Kaveesha Nethmal 244176N */

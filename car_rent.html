@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
+    <title>
+      Cheap car rental: Compare deals, models, and more | Booking.com - Clone
+    </title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="car_rent.css" />
+      <!-- Code By Kaveesha Nethmal 244176N -->
+  </head>
+  <body>
+    <!-- I copied the navbar code directly from index.html and changed accordingly instead of using an iframe or JavaScript fetch method.
+    Iframes can cause issues with responsiveness, styling conflicts, and are generally not recommended for including navigation bars.
+    Using JavaScript fetch to load the navbar from an external HTML file would be ideal for reusability,
+    but it doesn't work when opening files directly from the local file system (file://) due to browser security restrictions.
+    Since this project will be opened locally (not hosted on a server), copying the navbar manually is the most reliable solution. -->
+
+    <div class="main-section-wrapper">
+      <div class="main-section">
+        <div class="title-bar">
+          <h1 id="site-name">
+            <a href="https://www.booking.com/">Booking.com</a>
+          </h1>
+          <ul class="preferences">
+            <!-- <li class="pref-item" id="currency" onclick="showAlert()">LKR</li> -->
+            <li class="group-1">
+              <select name="currency-pr">
+                <option value="lkr">LKR</option>
+                <option value="usd">USD</option>
+              </select>
+            </li>
+            <li class="pref-item group-1" id="lang" onclick="showAlert()"></li>
+            <li class="pref-item group-1" id="help" onclick="showAlert()"></li>
+            <li class="pref-item group-1" id="sell">
+              <a
+                href="https://join.booking.com/?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaIUBiAEBmAExuAEXyAEP2AEB6AEB-AECiAIBqAIDuAKThcW_BsACAdICJGQyYTJjYzhhLWQwY2UtNGFlYy1iZDM1LWYxNTMzYjYzMGU4ZdgCBeACAQ&lang=en-us&sid=c67361e63d53489f1a1eac7b17ed093a&utm_medium=frontend&utm_source=topbar"
+                target="_blank"
+                >List your property</a
+              >
+            </li>
+            <li class="sign group-2">
+              <button class="connect" id="register" onclick="showAlert()">
+                Register
+              </button>
+            </li>
+            <li class="sign group-2">
+              <button class="connect" id="sign-in" onclick="showAlert()">
+                Sign in
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html"
+                ><img src="assets/logo/bed.png" alt="bed icon" /><span
+                  >Stays</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="flights.html"
+                ><img src="assets/logo/flight.png" alt="flight icon" /><span
+                  >Flights</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="#" class="active-nav"
+                ><img src="assets/logo/car.png" alt="car icon" /><span
+                  >Car Rentals</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="attractions.html"
+                ><img
+                  src="assets/logo/ferris_wheel.png"
+                  alt="ferris wheel icon"
+                /><span>Attractions</span></a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showAlertNonExist()"
+                ><img src="assets/logo/taxi.png" alt="taxi icon" /><span
+                  >Airport Taxi</span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="main-text">
+          <h1>Car rentals for any kind of trip</h1>
+          <h3>
+            Great cars at great prices from the biggest rental companies..
+          </h3>
+        </div>
+
+        <div class="input-bar">
+          <div id="location" class="input-items">
+            <img src="assets/logo/search.png" alt="search icon" />
+            <div class="input-wrapper">
+              <p class="input-description">Pickup location</p>
+              <input type="text" placeholder="Airport, city or station" />
+            </div>
+          </div>
+          <div id="pickup-date" class="input-items">
+            <img src="assets/logo/calender.png" alt="calender logo" />
+            <div class="input-wrapper">
+              <p class="input-description">Pickup date</p>
+              <input type="date" />
+            </div>
+          </div>
+          <div id="pickup-time" class="input-items">
+            <img src="assets/logo/clock_icon.png" alt="Clock logo" />
+            <div class="input-wrapper">
+              <p class="input-description">Pickup time</p>
+              <select name="time" id="pickup-time" class="time-input">
+                <option value="12:00 AM">12:00 AM</option>
+                <option value="12:30 AM">12:30 AM</option>
+                <option value="01:00 AM">01:00 AM</option>
+                <option value="01:30 AM">01:30 AM</option>
+                <option value="02:00 AM">02:00 AM</option>
+                <option value="02:30 AM">02:30 AM</option>
+                <option value="03:00 AM">03:00 AM</option>
+                <option value="03:30 AM">03:30 AM</option>
+                <option value="04:00 AM">04:00 AM</option>
+                <option value="04:30 AM">04:30 AM</option>
+                <option value="05:00 AM">05:00 AM</option>
+                <option value="05:30 AM">05:30 AM</option>
+                <option value="06:00 AM">06:00 AM</option>
+                <option value="06:30 AM">06:30 AM</option>
+                <option value="07:00 AM">07:00 AM</option>
+                <option value="07:30 AM">07:30 AM</option>
+                <option value="08:00 AM">08:00 AM</option>
+                <option value="08:30 AM">08:30 AM</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="10:00 AM" selected>10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM">11:30 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="01:30 PM">01:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="05:30 PM">05:30 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+                <option value="06:30 PM">06:30 PM</option>
+                <option value="07:00 PM">07:00 PM</option>
+                <option value="07:30 PM">07:30 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="08:30 PM">08:30 PM</option>
+                <option value="09:00 PM">09:00 PM</option>
+                <option value="09:30 PM">09:30 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                <option value="10:30 PM">10:30 PM</option>
+                <option value="11:00 PM">11:00 PM</option>
+                <option value="11:30 PM">11:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="drop-off-date" class="input-items">
+            <img src="assets/logo/calender.png" alt="calender logo" />
+            <div class="input-wrapper">
+              <p class="input-description">Drop-off date</p>
+              <input type="date" />
+            </div>
+          </div>
+
+          <div id="drop-off-time" class="input-items">
+            <img src="assets/logo/clock_icon.png" alt="Clock logo" />
+            <div class="input-wrapper">
+              <p class="input-description">Drop-off time</p>
+              <select name="time" id="drop-off-time" class="time-input">
+                <option value="12:00 AM">12:00 AM</option>
+                <option value="12:30 AM">12:30 AM</option>
+                <option value="01:00 AM">01:00 AM</option>
+                <option value="01:30 AM">01:30 AM</option>
+                <option value="02:00 AM">02:00 AM</option>
+                <option value="02:30 AM">02:30 AM</option>
+                <option value="03:00 AM">03:00 AM</option>
+                <option value="03:30 AM">03:30 AM</option>
+                <option value="04:00 AM">04:00 AM</option>
+                <option value="04:30 AM">04:30 AM</option>
+                <option value="05:00 AM">05:00 AM</option>
+                <option value="05:30 AM">05:30 AM</option>
+                <option value="06:00 AM">06:00 AM</option>
+                <option value="06:30 AM">06:30 AM</option>
+                <option value="07:00 AM">07:00 AM</option>
+                <option value="07:30 AM">07:30 AM</option>
+                <option value="08:00 AM">08:00 AM</option>
+                <option value="08:30 AM">08:30 AM</option>
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="09:30 AM">09:30 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="11:30 AM" selected>11:30 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="01:30 PM">01:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="04:30 PM">04:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+                <option value="05:30 PM">05:30 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+                <option value="06:30 PM">06:30 PM</option>
+                <option value="07:00 PM">07:00 PM</option>
+                <option value="07:30 PM">07:30 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="08:30 PM">08:30 PM</option>
+                <option value="09:00 PM">09:00 PM</option>
+                <option value="09:30 PM">09:30 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                <option value="10:30 PM">10:30 PM</option>
+                <option value="11:00 PM">11:00 PM</option>
+                <option value="11:30 PM">11:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="search-input" type="submit">Search</button>
+        </div>
+        <div class="driver-details">
+          <div class="detail-wrap">
+            <input type="checkbox" id="drop-loc" />
+            <label for="drop-loc">Drop car off at different location</label>
+          </div>
+          <div class="detail-wrap">
+            <input type="checkbox" id="driver-age" />
+            <label for="drop-loc">Driver aged 30 – 65?</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <a href="#" id="backToTop" title="Go to top"> </a>
+
+      <div class="rental-companies">
+        <h1 class="rental-com-title">Popular rental car companies</h1>
+        <div class="companies">
+          <div class="company-name-wrap">
+            <img src="assets/srrent.png" alt="SR Rent A Car logo" />
+            <p class="company-name">SR Rent A Car</p>
+          </div>
+          <div class="company-name-wrap">
+            <img src="assets/europecar.png" alt="Europecar logo" />
+            <p class="company-name">Europecar</p>
+          </div>
+          <div class="company-name-wrap">
+            <img src="assets/sixt.png" alt="Sixit logo" />
+            <p class="company-name">Sixit</p>
+          </div>
+          <div class="company-name-wrap">
+            <img src="assets/hertz.png" alt="Hertz logo" />
+            <p class="company-name">Hertz</p>
+          </div>
+        </div>
+      </div>
+      <div class="sub-section" id="faq-carrent">
+        <div class="sub-section-title" id="faq-carrent-title">
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq-section">
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                How much does it cost to rent a car in sri lanka for a week
+                ?<span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                Based on the average daily cost of LKR 20,866, a week will cost
+                about LKR 146,061.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                What car do people usually book in Sri Lanka?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                Medium is the most popular car group to rent in Sri Lanka,
+                followed by small and large.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                How much does it cost to rent medium car in Sri Lanka?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                On average, renting Medium car in Sri Lanka costs LKR 19,547 a
+                day.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                How much does it cost to rent small car in Sri Lanka?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                On average, renting Small car in Sri Lanka costs LKR 14,346 a
+                day.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                How much does it cost to rent large car in Sri Lanka?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                On average, renting Large car in Sri Lanka costs LKR 23,708 a
+                day.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                What car rental companies are available in Sri Lanka?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                Based on our bookings, there are 4 car rental companies
+                available in Sri Lanka, including:
+                <br />• SR Rent A Car <br />• Europcar <br />• Sixt
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                Which companies offer the cheapest car rates in Sri Lanka?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                In the past 6 months, 3 rental companies were offering the
+                cheapest rates for medium car on our site:
+                <br />• SR Rent A Car for an average daily price of LKR 16,613
+                <br />• Europcar for an average daily price of LKR 21,462
+                <br />• Sixt for an average daily price of LKR 30,214
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                Which pick-up locations in Sri Lanka are the most popular?
+                <span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                Our users often pick up their car in these locations:
+                <br />• Andiambalama <br />• Katunayaka <br />• Bandaranaike
+                International Airport
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                Why should I book a car rental in Sri Lanka with
+                Booking.com?<span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                We make it easy to find a rental that’ll fit your needs. Here’s
+                what we offer:
+                <br />• Huge selection of cars – from compact vehicles to SUVs
+                <br />• Support in 30+ languages <br />• Free cancellation up to
+                48 hours before pick-up time on most bookings.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>What do I need to rent a car? <span class="arrow">⏶</span></p>
+            </div>
+            <div class="answer">
+              <p>
+                When you’re booking a car, all you need is a debit or credit
+                card.
+                <br /><br />At the rental counter, you’ll need: <br />• Your
+                passport <br />• Your voucher <br />• A driver’s license for
+                each driver <br />• The main driver’s credit card (some
+                companies accept debit cards, but most don’t)
+                <br /><br />Important: Check the car’s rental terms as well,
+                because each company has its own rules.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>Am I old enough to rent a car?<span class="arrow">⏶</span></p>
+            </div>
+            <div class="answer">
+              <p>
+                Most companies will let you rent a car if you’re at least 21,
+                and some will even rent to younger drivers. However, if you’re
+                under 25, you might have to pay a “young driver fee.”
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                Can I book a rental car for someone else?<span class="arrow"
+                  >⏶</span
+                >
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                Of course. Just put their info on the “Driver details” form when
+                booking the car.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                Any tips for picking the right car?<span class="arrow">⏶</span>
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                • Think about where you’re going. An SUV might be great for
+                cruising down a Texas freeway, but a smaller car will be a lot
+                easier for getting around Rome.
+                <br />• See what other people think. You’ll find lots of reviews
+                and ratings on our site. <br />• Don’t forget the transmission.
+                In some countries, almost everyone drives manual cars, while
+                automatics are the norm in other ones.
+              </p>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <div class="question">
+              <p>
+                Are all fees included in the rental price?<span class="arrow"
+                  >⏶</span
+                >
+              </p>
+            </div>
+            <div class="answer">
+              <p>
+                The price you see includes the car, mandatory coverage (e.g.
+                Theft Protection, Collision Damage Waiver), and fees that, if
+                they apply, are usually payable at pick-up (e.g. any one-way
+                fees, airport surcharges, or local taxes).
+                <br /><br />It also includes any extras you already added (e.g.,
+                GPS, baby seats). <br /><br />It doesn’t include any extra
+                coverage you buy when you get to the rental counter.
+                <br /><br /><strong>Tip:</strong> There’s a full price breakdown
+                on the Payment page.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="explore-list">
+        <ul>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Regions</a></li>
+          <li><a href="#">Cities</a></li>
+          <li><a href="#">Districts</a></li>
+          <li><a href="#">Airports</a></li>
+          <li><a href="#">Hotels</a></li>
+          <li><a href="#">Places of interest</a></li>
+          <li><a href="#">Vacation Homes</a></li>
+          <li><a href="#">Apartments</a></li>
+          <li><a href="#">Resorts</a></li>
+          <li><a href="#">Villas</a></li>
+          <li><a href="#">Hostels</a></li>
+          <li><a href="#">B&Bs</a></li>
+          <li><a href="#">Guest Houses</a></li>
+          <li><a href="#">Unique places to stay</a></li>
+          <li><a href="#">All destinations</a></li>
+          <li><a href="#">All flight destinations</a></li>
+          <li><a href="#">All car rental locations</a></li>
+          <li><a href="#">All vacation destinations</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Discover</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Discover monthly stays</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <div class="footer-nav-wrapper">
+      <div class="footer-nav">
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Support</h2>
+          <ul>
+            <li><a href="#">Coronavirus (COVID-19) FAQs</a></li>
+            <li><a href="#">Manage your trips</a></li>
+            <li><a href="#">Contact Customer Service</a></li>
+            <li><a href="#">Safety Resource Center</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Discover</h2>
+          <ul>
+            <li><a href="#">Genius loyalty program</a></li>
+            <li><a href="#">Seasonal and holiday deals</a></li>
+            <li><a href="#">Travel articles</a></li>
+            <li><a href="#">Booking.com for Business</a></li>
+            <li><a href="#">Traveller Review Awards</a></li>
+            <li><a href="#">Car rental</a></li>
+            <li><a href="#">Flight finder</a></li>
+            <li><a href="#">Restaurant reservations</a></li>
+            <li><a href="#">Booking.com for Travel Agents</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Terms and Settings</h2>
+          <ul>
+            <li><a href="#">Privacy & cookies</a></li>
+            <li><a href="#">Terms & conditions</a></li>
+            <li><a href="#">Partner dispute</a></li>
+            <li><a href="#">Modern Slavery Statement</a></li>
+            <li><a href="#">Human Rights Statement</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Partners</h2>
+          <ul>
+            <li><a href="#">Extranet login</a></li>
+            <li><a href="#">Partner help</a></li>
+            <li><a href="#">List your property</a></li>
+            <li><a href="#">Become an affiliate</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">About</h2>
+          <ul>
+            <li><a href="#">About Booking.com</a></li>
+            <li><a href="#">How We Work</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press center</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Investor relations</a></li>
+            <li><a href="#">Corporate contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-text">
+        <p>
+          Booking.com is part of Booking Holdings Inc., the world leader in
+          online travel and related services.
+        </p>
+        <p>Copyright © 1996–2025 Booking.com™. All rights reserved</p>
+        <p>
+          Copyright ©2025 Kaveesha Nethmal. All rights reserved. This is a clone
+          created by Kaveesha Nethmal, and all rights of the clone are reserved
+          to Kaveesha.
+        </p>
+      </div>
+      <div class="logo-list">
+        <img
+          src="assets/footer_logo/Booking_com_logo.png"
+          alt="logo of booking.com"
+        />
+        <img
+          src="assets/footer_logo/Priceline_logo.png"
+          alt="logo of priceline"
+        />
+        <img src="assets/footer_logo/Kayak_Logo.png" alt="logo of kayak" />
+        <img src="assets/footer_logo/agoda_logo.png" alt="logo of agoda" />
+        <img
+          src="assets/footer_logo/opentable_logo.png"
+          alt="logo of opentable"
+        />
+      </div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

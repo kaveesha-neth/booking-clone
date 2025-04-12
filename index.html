@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Book hotels, flights, car rentals, and more at Booking.com. Get the best deals for your perfect vacation."
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <title>
+      Booking.com | Clone site | The best hotels, flights, car rentals &
+      accommodations
+    </title>
+    <link rel="stylesheet" href="style.css" />
+
+      <!-- Code By Kaveesha Nethmal 244176N -->
+  </head>
+  <body>
+    <div class="firstAlertMessage">
+      <div class="alert-message">
+        <h3>Message for the reviewer from Kaveesha</h3>
+        <h4>For your information:</h4>
+        <p>
+          I didn't add a taxis page because minimum requirement was only 3 pages
+          and I added 4 pages including home page.
+        </p>
+        <p>
+          This site is fully responsive. However, responsiveness is not shown in
+          the video demonstration due to time limits. Please feel free to test
+          it manually!
+        </p>
+        <p>You’ll only see this message once during your visit.</p>
+        <p style="margin-top: 10px">Thank you !</p>
+        <div class="close-btn-wrap">
+          <button id="close-btn" onclick="hideNotification()">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class="main-section-wrapper">
+      <div class="main-section">
+        <div class="title-bar">
+          <h1 id="site-name">
+            <a href="https://www.booking.com/">Booking.com</a>
+          </h1>
+          <ul class="preferences">
+            <li class="group-1">
+              <select name="currency-pr">
+                <option value="lkr">LKR</option>
+                <option value="usd">USD</option>
+              </select>
+            </li>
+            <li class="pref-item group-1" id="lang" onclick="showAlert()"></li>
+            <li class="pref-item group-1" id="help" onclick="showAlert()"></li>
+            <li class="pref-item group-1" id="sell">
+              <a
+                href="https://join.booking.com/?aid=304142&label=gen173nr-1FCAEoggI46AdIM1gEaIUBiAEBmAExuAEXyAEP2AEB6AEB-AECiAIBqAIDuAKThcW_BsACAdICJGQyYTJjYzhhLWQwY2UtNGFlYy1iZDM1LWYxNTMzYjYzMGU4ZdgCBeACAQ&lang=en-us&sid=c67361e63d53489f1a1eac7b17ed093a&utm_medium=frontend&utm_source=topbar"
+                target="_blank"
+                >List your property</a
+              >
+            </li>
+            <li class="sign group-2">
+              <button class="connect" id="register" onclick="showAlert()">
+                Register
+              </button>
+            </li>
+            <li class="sign group-2">
+              <button class="connect" id="sign-in" onclick="showAlert()">
+                Sign in
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <nav>
+          <ul>
+            <li>
+              <a href="#" class="active-nav"
+                ><img src="assets/logo/bed.png" alt="bed icon" /><span
+                  >Stays</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="flights.html"
+                ><img src="assets/logo/flight.png" alt="flight icon" /><span
+                  >Flights</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="car_rent.html"
+                ><img src="assets/logo/car.png" alt="car icon" /><span
+                  >Car Rentals</span
+                ></a
+              >
+            </li>
+            <li>
+              <a href="attractions.html"
+                ><img
+                  src="assets/logo/ferris_wheel.png"
+                  alt="ferris wheel icon"
+                /><span>Attractions</span></a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="showAlertNonExist()"
+                ><img src="assets/logo/taxi.png" alt="taxi icon" /><span
+                  >Airport Taxi</span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="main-text">
+          <h1>Find your next stay</h1>
+          <h3>Search deals on hotels, homes and much more...</h3>
+        </div>
+
+        <div class="input-bar">
+          <div id="destination" class="input-items">
+            <img src="assets/logo/bed_black.png" alt="bed logo" />
+            <input type="text" placeholder="Where are you going" />
+          </div>
+          <div id="date" class="input-items">
+            <img src="assets/logo/calender.png" alt="calender logo" />
+            <input type="date" placeholder="Check-in date - Check-out date" />
+            <span> - </span>
+            <input type="date" placeholder="Check-in date - Check-out date" />
+          </div>
+          <div id="info" class="input-items" onclick="showDropMenu(event)">
+            <div class="info-in-wrap">
+              <img src="assets/logo/avatar.png" alt="avatar logo" />
+              <p id="count">
+                <span id="count-data">2 adults - 0 children - 1 room </span
+                ><span id="arrow">⏶</span>
+              </p>
+            </div>
+
+            <div class="drop-down" id="drop-menu">
+              <div class="drop-down-item">
+                <label for="adult-count">Adults</label>
+                <input
+                  type="number"
+                  min="1"
+                  step="1"
+                  value="2"
+                  id="adult-count"
+                  class="count-input"
+                />
+              </div>
+              <div class="drop-down-item">
+                <label for="children-count">Children</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  value="0"
+                  id="children-count"
+                  class="count-input"
+                />
+              </div>
+              <div class="drop-down-item">
+                <label for="rooms-count">Rooms</label>
+                <input
+                  type="number"
+                  min="1"
+                  step="1"
+                  value="1"
+                  id="rooms-count"
+                  class="count-input"
+                />
+              </div>
+              <div class="drop-down-item" id="ispet_item">
+                <label for="ispet">Travelling with pets ?</label>
+                <input type="checkbox" id="ispet" />
+              </div>
+              <p class="message">
+                Assistance animals aren't considered as pets.
+              </p>
+              <button id="confirm-btn" onclick="updateData()">Confirm</button>
+            </div>
+          </div>
+          <button id="search-input" type="submit">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <a href="#" id="backToTop" title="Go to top"> </a>
+      <div class="main-video">
+        <video
+          src="assets/The Breathtaking Beauty of Nature _ HD.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="video-text">
+          <h1>Escape to Nature. Discover Your Perfect Getaway</h1>
+          <h3>
+            Unwind in stunning landscapes, from serene beaches to majestic
+            mountains. Your dream vacation is just a click away.
+          </h3>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="sub-section" id="trending">
+          <div class="sub-section-title" id="trending-title">
+            <h2>Trending Destinations</h2>
+            <h4>Most popular choices for travellers from Sri Lanka</h4>
+          </div>
+          <div class="trending-dest">
+            <div class="first-row">
+              <div class="destination-places" id="kandy-des">
+                <p class="name">
+                  Kandy &nbsp;<span
+                    ><img
+                      src="assets/Flag_of_Sri_Lanka.png"
+                      alt="flag of sri lanka"
+                  /></span>
+                </p>
+              </div>
+              <div class="destination-places" id="colombo-des">
+                <p class="name">
+                  Colombo &nbsp;<span
+                    ><img
+                      src="assets/Flag_of_Sri_Lanka.png"
+                      alt="flag of sri lanka"
+                  /></span>
+                </p>
+              </div>
+            </div>
+            <div class="second-row">
+              <div class="destination-places" id="nuwaraeliya-des">
+                <p class="name">
+                  Nuwara Eliya &nbsp;<span
+                    ><img
+                      src="assets/Flag_of_Sri_Lanka.png"
+                      alt="flag of sri lanka"
+                  /></span>
+                </p>
+              </div>
+              <div class="destination-places" id="dubai-des">
+                <p class="name">
+                  Dubai &nbsp;<span
+                    ><img
+                      src="assets/Flag_of_the_United_Arab_Emirates.png"
+                      alt="flag of sri lanka"
+                  /></span>
+                </p>
+              </div>
+              <div class="destination-places" id="ella-des">
+                <p class="name">
+                  Ella &nbsp;<span
+                    ><img
+                      src="assets/Flag_of_Sri_Lanka.png"
+                      alt="flag of sri lanka"
+                  /></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section" id="deals">
+          <div class="sub-section-title" id="deals-title">
+            <h2>Deals for the weekend</h2>
+            <h4>Save on stays for April 11 - April 13</h4>
+          </div>
+          <div class="scroll-x-bar" id="deals-scrollbar">
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-1">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/mtRoyal.jpg"
+                  alt="Mount Royal Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Mount Royal</h3>
+                <h5 class="hotel-address">Kandy, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">6.9</p>
+                  <p class="rate-text">Review score : <span>8 reviews</span></p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 26,703</p>
+                  <p class="new-price">LKR 20,027</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-2">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/EllaAlpine.jpg"
+                  alt="Ella Alpine Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Ella Alpine Resort</h3>
+                <h5 class="hotel-address">Ella, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.5</p>
+                  <p class="rate-text">Very good : <span>73 reviews</span></p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 60,527</p>
+                  <p class="new-price">LKR 45,395</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-3">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/granbell.jpg"
+                  alt="Granbell Hotel Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Granbell Hotel Colombo</h3>
+                <h5 class="hotel-address">Colombo, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.6</p>
+                  <p class="rate-text">
+                    Excellent : <span>5,773 reviews</span>
+                  </p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 89,010</p>
+                  <p class="new-price">LKR 53,406</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-4">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/foxKandy.jpg"
+                  alt="Fox Kandy Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Fox Kandy</h3>
+                <h5 class="hotel-address">Kandy, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.8</p>
+                  <p class="rate-text">
+                    Excellent : <span>1,079 reviews</span>
+                  </p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 65,274</p>
+                  <p class="new-price">LKR 48,956</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-5">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/EllaGreen.jpg"
+                  alt="Ella green Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Ella Green Cottages</h3>
+                <h5 class="hotel-address">Ella, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.3</p>
+                  <p class="rate-text">Very Good : <span>273 reviews</span></p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 43,674</p>
+                  <p class="new-price">LKR 34,939</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-6">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/nhCollection.jpg"
+                  alt="NH collection Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">NH Collection Colombo</h3>
+                <h5 class="hotel-address">Colombo, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.6</p>
+                  <p class="rate-text">Excellent : <span>579 reviews</span></p>
+                </div>
+                <p class="offer">Limited time Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 74,768</p>
+                  <p class="new-price">LKR 44,861</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-7">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/hotelYo.jpg"
+                  alt="Hotel Yo Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Hotel Yo Kandy</h3>
+                <h5 class="hotel-address">Kandy, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.4</p>
+                  <p class="rate-text">Very Good : <span>766 reviews</span></p>
+                </div>
+                <p class="offer">Limited time Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 62,663</p>
+                  <p class="new-price">LKR 40,731</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-8">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/levonB.jpg"
+                  alt="Levon Boutique Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Levon Boutique Hotel</h3>
+                <h5 class="hotel-address">Ella, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">8.7</p>
+                  <p class="rate-text">Excellent : <span>195 reviews</span></p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 180,987</p>
+                  <p class="new-price">LKR 72,395</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-9">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/sayuraHouse.jpg"
+                  alt="Sayura house Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Sayura House</h3>
+                <h5 class="hotel-address">Colombo, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">9.3</p>
+                  <p class="rate-text">Wonderful : <span>485 reviews</span></p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 48,463</p>
+                  <p class="new-price">LKR 29,077</p>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" target="_blank" class="scroll-x-card" id="deal-10">
+              <div class="place-image">
+                <img
+                  src="assets/deals_places/travellersNest.jpg"
+                  alt="Travellers Nest Image"
+                />
+              </div>
+              <div class="deal-content">
+                <p class="genius-tag">Genius</p>
+                <h3 class="hotel-name">Hotel Travellers Nest Kandy</h3>
+                <h5 class="hotel-address">Kandy, Sri Lanka</h5>
+                <div class="review">
+                  <p class="rating">7.8</p>
+                  <p class="rate-text">Good : <span>443 reviews</span></p>
+                </div>
+                <p class="offer">Getaway Deal</p>
+                <div class="price">
+                  <p class="time">2 nights</p>
+                  <p class="old-price">LKR 97,027</p>
+                  <p class="new-price">LKR 29,109</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sub-section" id="ideas">
+          <div class="sub-section-title" id="ideas-title">
+            <h2>Get inspiration for your next trip</h2>
+            <h4>Find your next travel destination.</h4>
+          </div>
+
+          <div class="scroll-x-bar next-trip-bar" id="ideas-scrollbar">
+            <a href="#" target="_blank" id="first-card">
+              <div class="article-nav">
+                <div class="article-image">
+                  <img src="assets/losangales.jpg" alt="" />
+                </div>
+                <div class="article-overlay-text">
+                  <h3>5 of the best hotels in Los Angeles</h3>
+                  <p>
+                    From Hollywood to Beverly Hills discover 5 of the best
+                    hotels in Los Angeles for youe stay
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              target="_blank"
+              class="scroll-x-card next-trip-card"
+              id="recom-card-2"
+            >
+              <div class="place-image">
+                <img src="assets/orlandofamily.jpg" alt="A family" />
+              </div>
+              <div class="deal-content">
+                <h3 class="title-recom">
+                  The 6 best Orlando hotels for families
+                </h3>
+                <h5 class="description-recom">
+                  Discover the best Orlando hotels for families for your
+                  vacation.
+                </h5>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              target="_blank"
+              class="scroll-x-card next-trip-card"
+              id="recom-card-3"
+            >
+              <div class="place-image">
+                <img src="assets/skitown.jpg" alt="an image of a snowy city" />
+              </div>
+              <div class="deal-content">
+                <h3 class="title-recom">5 best ski towns around the world</h3>
+                <h5 class="description-recom">
+                  Discover a winter wonderland in these charming ski
+                  destinations
+                </h5>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              target="_blank"
+              class="scroll-x-card next-trip-card"
+              id="recom-card-4"
+            >
+              <div class="place-image">
+                <img src="assets/vacation.jpg" alt="vacation home" />
+              </div>
+              <div class="deal-content">
+                <h3 class="title-recom">
+                  5 vacation homes for a Thanksgiving getaway
+                </h3>
+                <h5 class="description-recom">
+                  Enjoy Thanksgiving dinner at these vacation homes
+                </h5>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              target="_blank"
+              class="scroll-x-card next-trip-card"
+              id="recom-card-5"
+            >
+              <div class="place-image">
+                <img src="assets/orlandofamily.jpg" alt="A family" />
+              </div>
+              <div class="deal-content">
+                <h3 class="title-recom">6 incredible Bangkok rooftop bars</h3>
+                <h5 class="description-recom">
+                  Amazing city views, cocktails and world class cuisine
+                </h5>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sub-section" id="ideas">
+          <div class="sub-section-title" id="ideas-title">
+            <h1>Popular with travelers from Sri Lanka</h1>
+          </div>
+          <div class="popular-hotel-list">
+            <a href="#" class="popular-hotel"><div>Kandy hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Nuwara Eliya hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Colombo hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Ella hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Anuradhapura hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Galle hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Negombo hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Trincomalee hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Sigiriya hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Mirissa hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Arugam Bay hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Kataragama hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Jaffna hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Unawatuna hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Hikkaduwa hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Dambulla hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Haputale hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Tangalle hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Udawalawe hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Weligama hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Hiriketiya hotels</div></a>
+            <a href="#" class="popular-hotel"
+              ><div>Tissamaharama hotels</div></a
+            >
+            <a href="#" class="popular-hotel"><div>Polonnaruwa hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Badulla hotels</div></a>
+            <a href="#" class="popular-hotel"><div>Ahangama hotels</div></a>
+          </div>
+        </div>
+
+        <div class="explore-list">
+          <ul>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#">Regions</a></li>
+            <li><a href="#">Cities</a></li>
+            <li><a href="#">Districts</a></li>
+            <li><a href="#">Airports</a></li>
+            <li><a href="#">Hotels</a></li>
+            <li><a href="#">Places of interest</a></li>
+            <li><a href="#">Vacation Homes</a></li>
+            <li><a href="#">Apartments</a></li>
+            <li><a href="#">Resorts</a></li>
+            <li><a href="#">Villas</a></li>
+            <li><a href="#">Hostels</a></li>
+            <li><a href="#">B&Bs</a></li>
+            <li><a href="#">Guest Houses</a></li>
+            <li><a href="#">Unique places to stay</a></li>
+            <li><a href="#">All destinations</a></li>
+            <li><a href="#">All flight destinations</a></li>
+            <li><a href="#">All car rental locations</a></li>
+            <li><a href="#">All vacation destinations</a></li>
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Discover</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Discover monthly stays</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer-nav-wrapper">
+      <div class="footer-nav">
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Support</h2>
+          <ul>
+            <li><a href="#">Coronavirus (COVID-19) FAQs</a></li>
+            <li><a href="#">Manage your trips</a></li>
+            <li><a href="#">Contact Customer Service</a></li>
+            <li><a href="#">Safety Resource Center</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Discover</h2>
+          <ul>
+            <li><a href="#">Genius loyalty program</a></li>
+            <li><a href="#">Seasonal and holiday deals</a></li>
+            <li><a href="#">Travel articles</a></li>
+            <li><a href="#">Booking.com for Business</a></li>
+            <li><a href="#">Traveller Review Awards</a></li>
+            <li><a href="#">Car rental</a></li>
+            <li><a href="#">Flight finder</a></li>
+            <li><a href="#">Restaurant reservations</a></li>
+            <li><a href="#">Booking.com for Travel Agents</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Terms and Settings</h2>
+          <ul>
+            <li><a href="#">Privacy & cookies</a></li>
+            <li><a href="#">Terms & conditions</a></li>
+            <li><a href="#">Partner dispute</a></li>
+            <li><a href="#">Modern Slavery Statement</a></li>
+            <li><a href="#">Human Rights Statement</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">Partners</h2>
+          <ul>
+            <li><a href="#">Extranet login</a></li>
+            <li><a href="#">Partner help</a></li>
+            <li><a href="#">List your property</a></li>
+            <li><a href="#">Become an affiliate</a></li>
+          </ul>
+        </div>
+        <div class="nav-item">
+          <h2 class="footer-nav-title">About</h2>
+          <ul>
+            <li><a href="#">About Booking.com</a></li>
+            <li><a href="#">How We Work</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press center</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Investor relations</a></li>
+            <li><a href="#">Corporate contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-text">
+        <p>
+          Booking.com is part of Booking Holdings Inc., the world leader in
+          online travel and related services.
+        </p>
+        <p>Copyright © 1996–2025 Booking.com™. All rights reserved</p>
+        <p>
+          Copyright ©2025 Kaveesha Nethmal. All rights reserved. This is a clone
+          created by Kaveesha Nethmal, and all rights of the clone are reserved
+          to Kaveesha.
+        </p>
+      </div>
+      <div class="logo-list">
+        <img
+          src="assets/footer_logo/Booking_com_logo.png"
+          alt="logo of booking.com"
+        />
+        <img
+          src="assets/footer_logo/Priceline_logo.png"
+          alt="logo of priceline"
+        />
+        <img src="assets/footer_logo/Kayak_Logo.png" alt="logo of kayak" />
+        <img src="assets/footer_logo/agoda_logo.png" alt="logo of agoda" />
+        <img
+          src="assets/footer_logo/opentable_logo.png"
+          alt="logo of opentable"
+        />
+      </div>
+    </footer>
+      <!-- Code By Kaveesha Nethmal 244176N -->
+    <script src="main.js"></script>
+  </body>
+</html>
